@@ -65,20 +65,15 @@ body:has(.main) {
 
 .header {
   display: grid;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: auto 1fr;
   gap: 1.5rem;
   align-items: center;
 }
 .header__pic {
-  width: fit-content;
-  border-radius: 80%;
-  overflow: hidden;
-  border: 2px solid #f0f0f0;
-}
-.header__pic img {
   width: 100px;
   object-fit: cover;
-  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid #f0f0f0;
 }
 .header__info__title {
   display: flex;
@@ -149,7 +144,7 @@ body:has(.main) {
 .tag {
   background-color: #f3f3f3;
   color: #333;
-  padding: 0.3em 0.7em;
+  padding: 0.2em 0.6em;
   border-radius: 4px;
   font-size: 0.85em;
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -209,13 +204,9 @@ body:has(.main) {
 .workExperience {
   border-left: 0.5mm solid #333;
   padding-left: 1.5em;
-}
-.workExperience .experienceCompany {
-  display: flex;
-  align-items: center;
   position: relative;
 }
-.workExperience .experienceCompany::before {
+.workExperience::before {
   position: absolute;
   left: -1.75em;
   content: "";
@@ -225,6 +216,11 @@ body:has(.main) {
   border-radius: 50%;
   print-color-adjust: exact;
   -webkit-print-color-adjust: exact;
+}
+.workExperience .experienceCompany {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .date::before {

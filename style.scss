@@ -86,21 +86,18 @@ body {
 
 .header {
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: auto 1fr;
     gap: $spacing * 6;
     align-items: center;
 
     &__pic {
-        width: fit-content;
-        border-radius: 80%;
-        overflow: hidden;
-        border: 2px solid $border-color;
+        // width: fit-content;
 
-        img {
-            width: 100px;
-            object-fit: cover;
-            aspect-ratio: 1;
-        }
+        width: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid $border-color;
+        // aspect-ratio: 1;
     }
 
     &__info {
@@ -182,7 +179,7 @@ body {
 .tag {
     background-color: $tag-bg;
     color: $accent-color;
-    padding: 0.3em 0.7em;
+    padding: 0.2em 0.6em;
     border-radius: 4px;
     font-size: 0.85em;
     font-family: $font-sans;
@@ -255,23 +252,24 @@ body {
 .workExperience {
     border-left: 0.5mm solid $accent-color;
     padding-left: 1.5em;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        left: -1.75em;
+        content: '';
+        height: 0.6em;
+        width: 0.6em;
+        background-color: $accent-color;
+        border-radius: 50%;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
 
     .experienceCompany {
         display: flex;
         align-items: center;
         position: relative;
-
-        &::before {
-            position: absolute;
-            left: -1.75em;
-            content: '';
-            height: 0.6em;
-            width: 0.6em;
-            background-color: $accent-color;
-            border-radius: 50%;
-            print-color-adjust: exact;
-            -webkit-print-color-adjust: exact;
-        }
     }
 }
 
