@@ -1,1 +1,257 @@
-﻿@page{size:A4;margin:0}body{margin:0;background-color:#fafafa}body:has(.main){font-size:16px}.main{background:#fffdf7;border:.2mm solid #f0f0f0;margin:10mm auto;width:210mm;padding:10mm;transition:border-color .2s;font-family:Georgia,"Times New Roman",serif;font-size:3.4mm;color:#111;line-height:normal;box-sizing:border-box;zoom:1.2}.main:hover{border-color:#dedada}.main p{margin-block:1em;line-height:normal}.main a{text-decoration:none;color:inherit}.main a:hover{text-decoration:underline}.main h1{margin:0;font-size:2.2em;font-weight:bold}.main h2{font-size:1.5em;font-weight:bold;font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin-block:.83em;border-bottom:1px solid #f0f0f0;padding-bottom:4px}.main ul{padding-left:2em;margin-top:.5em}.main p:first-child{margin-top:0}.main p:last-child{margin-bottom:0}.header-contacts{display:flex;flex-wrap:wrap;gap:1.2em;margin-top:.8em;margin-bottom:2em;font-size:.9em;color:#666;font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.header-contacts a,.header-contacts span{display:flex;align-items:center;gap:.4em}.header-contacts a i,.header-contacts span i{color:#333}.article{display:flex;gap:10mm}.article .left{flex:8}.article .right{flex:11}.section{margin-bottom:2em}.section h2{font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:.2em 0;margin-bottom:1em}.skill-group{margin-bottom:1.2em}.skill-group h3{font-size:.9em;margin:0 0 .5em 0;color:#666;font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:.5px}.tags{display:flex;flex-wrap:wrap;gap:.5em}.tag{background-color:#f3f3f3;color:#333;padding:.3em .7em;border-radius:4px;font-size:.85em;font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;border:1px solid #e0e0e0;font-weight:500}.experience{display:grid;grid-template-areas:"title location" "subtitle subtitle" "description description" "link link";grid-template-columns:max-content 1fr;gap:.2mm;margin-top:1em}.experience+.experience{margin-top:2em}.experience:not(:has(.experienceDescription))+.experience{margin-top:.5em}.experienceCompany{grid-area:title;font-size:1.1em;font-weight:bold}.experienceLocation{display:flex;align-items:center;grid-area:location;justify-self:end;color:#666;font-size:.9em}.experienceTitle{grid-area:subtitle;color:#666;margin-top:2px}.experienceTitle ol{list-style:none;padding:0;margin:0}.experienceDescription{grid-area:description;color:#111;margin-top:.5em}.experienceDescription ul{list-style:disc;padding-left:1.2em}.experienceDescription ul li{margin-bottom:4px}.workExperience{border-left:.5mm solid #333;padding-left:1.5em}.workExperience .experienceCompany{display:flex;align-items:center;position:relative}.workExperience .experienceCompany::before{position:absolute;left:-1.75em;content:"";height:.6em;width:.6em;background-color:#333;border-radius:50%;print-color-adjust:exact;-webkit-print-color-adjust:exact}.date::before{content:" • ";margin:0 4px}@media print{html,body{width:210mm;height:297mm;background:#fff}.main{margin:0;border:0;background:#fff;width:210mm !important;height:297mm !important;padding:10mm;zoom:1;font-size:3.4mm !important}.main a{text-decoration:none}.article{display:flex !important;flex-direction:row !important;gap:8mm !important}.section,.experience{page-break-inside:avoid}}@media(max-width: 1000px){.main{zoom:1}}@media(max-width: 800px){.main{width:95%;height:auto;margin:5mm auto}.article{flex-direction:column}.workExperience{padding-left:1em}.workExperience .experienceCompany::before{left:-1.25em}}/*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+@page {
+  size: A4;
+  margin: 0;
+}
+body {
+  margin: 0;
+  background-color: #fafafa;
+}
+body:has(.main) {
+  font-size: 16px;
+}
+
+.main {
+  background: #fffdf7;
+  border: 0.2mm solid #f0f0f0;
+  margin: 10mm auto;
+  width: 210mm;
+  padding: 10mm;
+  transition: border-color 0.2s;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.4mm;
+  color: #111;
+  line-height: normal;
+  box-sizing: border-box;
+  zoom: 1.2;
+}
+.main:hover {
+  border-color: #dedada;
+}
+.main p {
+  margin-block: 1em;
+  line-height: normal;
+}
+.main a {
+  text-decoration: none;
+  color: inherit;
+}
+.main a:hover {
+  text-decoration: underline;
+}
+.main h1 {
+  margin: 0;
+  font-size: 2.2em;
+  font-weight: bold;
+}
+.main h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin-block: 0.83em;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 4px;
+}
+.main ul {
+  padding-left: 2em;
+  margin-top: 0.5em;
+}
+.main p:first-child {
+  margin-top: 0;
+}
+.main p:last-child {
+  margin-bottom: 0;
+}
+
+.header-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  margin-top: 0.8em;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+  color: #666;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.header-contacts a, .header-contacts span {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.header-contacts a i, .header-contacts span i {
+  color: #333;
+}
+
+.article {
+  display: flex;
+  gap: 10mm;
+}
+.article .left {
+  flex: 8;
+}
+.article .right {
+  flex: 11;
+}
+
+.section {
+  margin-bottom: 2em;
+}
+.section h2 {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 0.2em 0;
+  margin-bottom: 1em;
+}
+
+.skill-group {
+  margin-bottom: 1.2em;
+}
+.skill-group h3 {
+  font-size: 0.9em;
+  margin: 0 0 0.5em 0;
+  color: #666;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.tag {
+  background-color: #f3f3f3;
+  color: #333;
+  padding: 0.3em 0.7em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  border: 1px solid #e0e0e0;
+  font-weight: 500;
+}
+
+.experience {
+  display: grid;
+  grid-template-areas: "title location" "subtitle subtitle" "description description" "link link";
+  grid-template-columns: max-content 1fr;
+  gap: 0.2mm;
+  margin-top: 1em;
+}
+.experience + .experience {
+  margin-top: 2em;
+}
+.experience:not(:has(.experienceDescription)) + .experience {
+  margin-top: 0.5em;
+}
+.experienceCompany {
+  grid-area: title;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.experienceLocation {
+  display: flex;
+  align-items: center;
+  grid-area: location;
+  justify-self: end;
+  color: #666;
+  font-size: 0.9em;
+}
+.experienceTitle {
+  grid-area: subtitle;
+  color: #666;
+  margin-top: 2px;
+}
+.experienceTitle ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.experienceDescription {
+  grid-area: description;
+  color: #111;
+  margin-top: 0.5em;
+}
+.experienceDescription ul {
+  list-style: disc;
+  padding-left: 1.2em;
+}
+.experienceDescription ul li {
+  margin-bottom: 4px;
+}
+
+.workExperience {
+  border-left: 0.5mm solid #333;
+  padding-left: 1.5em;
+}
+.workExperience .experienceCompany {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.workExperience .experienceCompany::before {
+  position: absolute;
+  left: -1.75em;
+  content: "";
+  height: 0.6em;
+  width: 0.6em;
+  background-color: #333;
+  border-radius: 50%;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.date::before {
+  content: " • ";
+  margin: 0 4px;
+}
+
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    background: #fff;
+  }
+  .main {
+    margin: 0;
+    border: 0;
+    background: #fff;
+    width: 210mm !important;
+    height: 297mm !important;
+    padding: 10mm;
+    zoom: 1;
+    font-size: 3.4mm !important;
+  }
+  .main a {
+    text-decoration: none;
+  }
+  .article {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8mm !important;
+  }
+  .section, .experience {
+    page-break-inside: avoid;
+  }
+}
+@media (max-width: 1000px) {
+  .main {
+    zoom: 1;
+  }
+}
+@media (max-width: 800px) {
+  .main {
+    width: 95%;
+    height: auto;
+    margin: 5mm auto;
+  }
+  .article {
+    flex-direction: column;
+  }
+  .workExperience {
+    padding-left: 1em;
+  }
+  .workExperience .experienceCompany::before {
+    left: -1.25em;
+  }
+}
