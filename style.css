@@ -80,7 +80,15 @@ body:has(.main) {
   object-fit: cover;
   aspect-ratio: 1;
 }
-.header__contacts {
+.header__info__title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+.header__info__title a {
+  font-size: large;
+}
+.header__info__contacts {
   display: flex;
   flex-wrap: wrap;
   gap: 1.2em;
@@ -89,14 +97,14 @@ body:has(.main) {
   color: #666;
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
-.header__contacts a,
-.header__contacts span {
+.header__info__contacts a,
+.header__info__contacts span {
   display: flex;
   align-items: center;
   gap: 0.4em;
 }
-.header__contacts a i,
-.header__contacts span i {
+.header__info__contacts a i,
+.header__info__contacts span i {
   color: #333;
 }
 

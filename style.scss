@@ -103,23 +103,35 @@ body {
         }
     }
 
-    &__contacts {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.2em;
-        margin-top: 0.8em;
-        font-size: 0.9em;
-        color: $text-muted;
-        font-family: $font-sans;
-
-        a,
-        span {
+    &__info {
+        &__title {
             display: flex;
-            align-items: center;
-            gap: 0.4em;
+            align-items: baseline;
+            gap: $spacing * 4;
 
-            i {
-                color: $accent-color;
+            a {
+                font-size: large;
+            }
+        }
+
+        &__contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2em;
+            margin-top: 0.8em;
+            font-size: 0.9em;
+            color: $text-muted;
+            font-family: $font-sans;
+
+            a,
+            span {
+                display: flex;
+                align-items: center;
+                gap: 0.4em;
+
+                i {
+                    color: $accent-color;
+                }
             }
         }
     }
