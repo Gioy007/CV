@@ -7,253 +7,322 @@ $text-muted: #666;
 $accent-color: #333;
 $tag-bg: #f3f3f3;
 $tag-border: #e0e0e0;
+$spacing: 0.25rem;
 
 // Fonts (Assicurati di importarli se usi Google Fonts, es. Noto Serif e Funnel Display)
 $font-sans: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 $font-serif: Georgia, 'Times New Roman', serif;
 
 @page {
-  size: A4;
-  margin: 0;
+    size: A4;
+    margin: 0;
 }
 
 body {
-  margin: 0;
-  background-color: #fafafa;
-  &:has(.main) { font-size: 16px; }
+    margin: 0;
+    background-color: #f5f0e8;
+    &:has(.main) {
+        font-size: 16px;
+    }
 }
 
 .main {
-  background: $bg-color;
-  border: 0.2mm solid $border-color;
-  margin: 10mm auto;
-  width: 210mm;
-  padding: 10mm;
-  transition: border-color 0.2s;
-  font-family: $font-serif;
-  font-size: 3.4mm;
-  color: $text-main;
-  line-height: normal;
-  box-sizing: border-box;
-  zoom: 1.2;
+    background: $bg-color;
+    border: 0.2mm solid $border-color;
+    margin: 10mm auto;
+    width: 210mm;
+    padding: 10mm;
+    transition: border-color 0.2s;
+    font-family: $font-serif;
+    font-size: 3.4mm;
+    color: $text-main;
+    line-height: normal;
+    box-sizing: border-box;
+    zoom: 1.2;
 
-  &:hover { border-color: $border-hover; }
+    &:hover {
+        border-color: $border-hover;
+    }
 
-  p { margin-block: 1em; line-height: normal; }
-  
-  a { 
-    text-decoration: none; 
-    color: inherit; 
-    
-    &:hover { text-decoration: underline; }
-  }
+    p {
+        margin-block: 1em;
+        line-height: normal;
+    }
 
-  h1 { margin: 0; font-size: 2.2em; font-weight: bold; }
-  h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: $font-sans;
-    margin-block: 0.83em;
-    border-bottom: 1px solid $border-color;
-    padding-bottom: 4px;
-  }
-  
-  ul { padding-left: 2em; margin-top: 0.5em; }
-  p:first-child { margin-top: 0; }
-  p:last-child { margin-bottom: 0; }
+    a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 2.2em;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+        font-family: $font-sans;
+        margin-block: 0.83em;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 4px;
+    }
+
+    ul {
+        padding-left: 2em;
+        margin-top: 0.5em;
+    }
+    p:first-child {
+        margin-top: 0;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
 }
 
-// Contacts Header Row
-.header-contacts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2em;
-  margin-top: 0.8em;
-  margin-bottom: 2em;
-  font-size: 0.9em;
-  color: $text-muted;
-  font-family: $font-sans;
-
-  a, span {
-    display: flex;
+.header {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: $spacing * 6;
     align-items: center;
-    gap: 0.4em;
-    
-    i { color: $accent-color; }
-  }
+
+    &__pic {
+        width: fit-content;
+        border-radius: 80%;
+        overflow: hidden;
+        border: 2px solid $border-color;
+
+        img {
+            width: 100px;
+            object-fit: cover;
+            aspect-ratio: 1;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2em;
+        margin-top: 0.8em;
+        font-size: 0.9em;
+        color: $text-muted;
+        font-family: $font-sans;
+
+        a,
+        span {
+            display: flex;
+            align-items: center;
+            gap: 0.4em;
+
+            i {
+                color: $accent-color;
+            }
+        }
+    }
 }
 
 .article {
-  display: flex;
-  gap: 10mm;
+    display: flex;
+    gap: 10mm;
 
-  .left { flex: 8; }
-  .right { flex: 11; } // Leggermente più largo per l'esperienza lavorativa
+    .left {
+        flex: 8;
+    }
+    .right {
+        flex: 11;
+    } // Leggermente più largo per l'esperienza lavorativa
 }
 
 .section {
-  margin-bottom: 2em;
-  
-  h2 {
-    font-family: $font-sans;
-    padding: 0.2em 0;
-    margin-bottom: 1em;
-  }
+    margin-bottom: 2em;
+
+    h2 {
+        font-family: $font-sans;
+        padding: 0.2em 0;
+        margin-bottom: 1em;
+    }
 }
 
 // Skills & Tags
 .skill-group {
-  margin-bottom: 1.2em;
-  
-  h3 {
-    font-size: 0.9em;
-    margin: 0 0 0.5em 0;
-    color: $text-muted;
-    font-family: $font-sans;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+    margin-bottom: 1.2em;
+
+    h3 {
+        font-size: 0.9em;
+        margin: 0 0 0.5em 0;
+        color: $text-muted;
+        font-family: $font-sans;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
 }
 
 .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
 }
 
 .tag {
-  background-color: $tag-bg;
-  color: $accent-color;
-  padding: 0.3em 0.7em;
-  border-radius: 4px;
-  font-size: 0.85em;
-  font-family: $font-sans;
-  border: 1px solid $tag-border;
-  font-weight: 500;
+    background-color: $tag-bg;
+    color: $accent-color;
+    padding: 0.3em 0.7em;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-family: $font-sans;
+    border: 1px solid $tag-border;
+    font-weight: 500;
 }
 
 // Experience & Education Lists
 .experience {
-  display: grid;
-  grid-template-areas: 
-    "title location" 
-    "subtitle subtitle" 
-    "description description" 
-    "link link";
-  grid-template-columns: max-content 1fr;
-  gap: 0.2mm;
-  margin-top: 1em;
+    display: grid;
+    grid-template-areas:
+        'title location'
+        'subtitle subtitle'
+        'description description'
+        'link link';
+    grid-template-columns: max-content 1fr;
+    gap: 0.2mm;
+    margin-top: 1em;
 
-  & + & { margin-top: 2em; }
-  &:not(:has(.experienceDescription)) + & { margin-top: 0.5em; }
-
-  &Company {
-    grid-area: title;
-    font-size: 1.1em;
-    font-weight: bold;
-  }
-
-  &Location {
-    display: flex;
-    align-items: center;
-    grid-area: location;
-    justify-self: end;
-    color: $text-muted;
-    font-size: 0.9em;
-  }
-
-  &Title {
-    grid-area: subtitle;
-    color: $text-muted;
-    margin-top: 2px;
-    
-    ol {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    & + & {
+        margin-top: 2em;
     }
-  }
-
-  &Description {
-    grid-area: description;
-    color: $text-main;
-    margin-top: 0.5em;
-    
-    ul { 
-      list-style: disc; 
-      padding-left: 1.2em; 
-      
-      li { margin-bottom: 4px; }
+    &:not(:has(.experienceDescription)) + & {
+        margin-top: 0.5em;
     }
-  }
+
+    &Company {
+        grid-area: title;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    &Location {
+        display: flex;
+        align-items: center;
+        grid-area: location;
+        justify-self: end;
+        color: $text-muted;
+        font-size: 0.9em;
+    }
+
+    &Title {
+        grid-area: subtitle;
+        color: $text-muted;
+        margin-top: 2px;
+
+        ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &Description {
+        grid-area: description;
+        color: $text-main;
+        margin-top: 0.5em;
+
+        ul {
+            list-style: disc;
+            padding-left: 1.2em;
+
+            li {
+                margin-bottom: 4px;
+            }
+        }
+    }
 }
 
 .workExperience {
-  border-left: 0.5mm solid $accent-color;
-  padding-left: 1.5em;
+    border-left: 0.5mm solid $accent-color;
+    padding-left: 1.5em;
 
-  .experienceCompany {
-    display: flex;
-    align-items: center;
-    position: relative;
+    .experienceCompany {
+        display: flex;
+        align-items: center;
+        position: relative;
 
-    &::before {
-      position: absolute;
-      left: -1.75em;
-      content: "";
-      height: 0.6em;
-      width: 0.6em;
-      background-color: $accent-color;
-      border-radius: 50%;
-      print-color-adjust: exact;
-      -webkit-print-color-adjust: exact;
+        &::before {
+            position: absolute;
+            left: -1.75em;
+            content: '';
+            height: 0.6em;
+            width: 0.6em;
+            background-color: $accent-color;
+            border-radius: 50%;
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
     }
-  }
 }
 
-.date::before { content: " • "; margin: 0 4px; }
+.date::before {
+    content: ' • ';
+    margin: 0 4px;
+}
 
 // Print & Responsive
 @media print {
-  html, body {
-    width: 210mm;
-    height: 297mm;
-    background: #fff;
-  }
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+        background: #fff;
+    }
 
-  .main {
-    margin: 0;
-    border: 0;
-    background: #fff;
-    width: 210mm !important;
-    height: 297mm !important;
-    padding: 10mm;
-    zoom: 1;
-    font-size: 3.4mm !important;
+    .main {
+        margin: 0;
+        border: 0;
+        background: #fff;
+        width: 210mm !important;
+        height: 297mm !important;
+        padding: 10mm;
+        zoom: 1;
+        font-size: 3.4mm !important;
 
-    a { text-decoration: none; }
-  }
+        a {
+            text-decoration: none;
+        }
+    }
 
-  .article {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 8mm !important;
-  }
+    .article {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 8mm !important;
+    }
 
-  .section, .experience { page-break-inside: avoid; }
+    .section,
+    .experience {
+        page-break-inside: avoid;
+    }
 }
 
 @media (max-width: 1000px) {
-  .main { zoom: 1; }
+    .main {
+        zoom: 1;
+    }
 }
 
 @media (max-width: 800px) {
-  .main {
-    width: 95%;
-    height: auto;
-    margin: 5mm auto;
-  }
-  .article { flex-direction: column; }
-  .workExperience { padding-left: 1em; }
-  .workExperience .experienceCompany::before { left: -1.25em; }
+    .main {
+        width: 95%;
+        height: auto;
+        margin: 5mm auto;
+    }
+    .article {
+        flex-direction: column;
+    }
+    .workExperience {
+        padding-left: 1em;
+    }
+    .workExperience .experienceCompany::before {
+        left: -1.25em;
+    }
 }
