@@ -250,26 +250,29 @@ body {
 }
 
 .workExperience {
-    border-left: 0.5mm solid $accent-color;
-    padding-left: 1.5em;
+    border-left: 2px solid $border-color;
+    padding-left: 1.5rem;
+    margin-left: 0.5rem;
     position: relative;
 
-    &::before {
-        position: absolute;
-        left: -1.75em;
-        content: '';
-        height: 0.6em;
-        width: 0.6em;
-        background-color: $accent-color;
-        border-radius: 50%;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
+    .experience {
+        position: relative; // necessario per il ::before assoluto
 
-    .experienceCompany {
-        display: flex;
-        align-items: center;
-        position: relative;
+        &::before {
+            content: '';
+            display: block;           // NON grid item
+            position: absolute;
+            left: calc(-1.5rem - 1px); // allineato al bordo sinistro del workExperience
+            top: 0.35em;
+            transform: translateX(-50%);
+            height: 0.6em;
+            width: 0.6em;
+            background-color: $accent-color;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px $bg-color;
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
     }
 }
 
